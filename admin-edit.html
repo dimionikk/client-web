@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Навчальна імітація редагування пристрою Samsung Galaxy S24 у каталозі GadgetHub">
+    <title>Редагування: Samsung Galaxy S24 – GadgetHub</title>
+    <link rel="icon" href="favicon.ico">
+</head>
+
+<body>
+    <header id="site-header">
+        <p class="site-name">GadgetHub</p>
+        <nav aria-label="Основна навігація">
+            <ul>
+                <li><a href="index.html">Каталог</a></li>
+                <li><a href="about.html">Про проєкт</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <nav aria-label="Хлібні крихти">
+            <ol>
+                <li><a href="admin.html">Адміністрування</a></li>
+                <li aria-current="page">Редагування: Samsung Galaxy S24</li>
+            </ol>
+        </nav>
+
+        <h1>Редагування: Samsung Galaxy S24</h1>
+
+        <form id="item-form" method="get">
+            <input type="hidden" name="id" value="2">
+
+            <fieldset>
+                <legend>Основні дані</legend>
+                <p>
+                    <label for="item-title">Назва</label>
+                    <input type="text" id="item-title" name="title" required minlength="2" maxlength="80"
+                        value="Samsung Galaxy S24">
+                </p>
+                <p>
+                    <label for="item-model">Код моделі</label>
+                    <input type="text" id="item-model" name="model" required
+                        pattern="[A-Z0-9]{2,10}(-[A-Z0-9]{2,10})?" aria-describedby="item-model-hint"
+                        value="SM-S921B">
+                </p>
+                <p id="item-model-hint">Великі латинські літери й цифри, можна один дефіс, наприклад SM-S921B.</p>
+                <p>
+                    <label for="item-category">Категорія</label>
+                    <select id="item-category" name="category" required>
+                        <option value="">Оберіть категорію</option>
+                        <option value="phone" selected>Телефон</option>
+                        <option value="laptop">Ноутбук</option>
+                        <option value="headphones">Навушники</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="item-price">Ціна, ₴</label>
+                    <input type="number" id="item-price" name="price" required min="1" max="200000" step="0.01"
+                        aria-describedby="item-price-hint" value="30000">
+                </p>
+                <p id="item-price-hint">Від 1 до 200 000 ₴, до двох знаків після коми.</p>
+                <p>
+                    <label for="item-release-year">Рік випуску</label>
+                    <input type="number" id="item-release-year" name="releaseYear" required min="2000" max="2026"
+                        step="1" aria-describedby="item-release-year-hint" value="2024">
+                </p>
+                <p id="item-release-year-hint">Рік від 2000 до 2026.</p>
+                <p>
+                    <label for="item-added-at">Дата додавання</label>
+                    <input type="date" id="item-added-at" name="addedAt" required min="2024-01-01" max="2027-12-31"
+                        aria-describedby="item-added-at-hint" value="2024-01-31">
+                </p>
+                <p id="item-added-at-hint">Дата від 1 січня 2024 до 31 грудня 2027.</p>
+            </fieldset>
+
+            <fieldset>
+                <legend>Опис і наявність</legend>
+                <p>
+                    <label for="item-image">Зображення</label>
+                    <input type="file" id="item-image" name="image" accept="image/avif,image/webp,image/jpeg"
+                        aria-describedby="item-image-hint">
+                </p>
+                <p id="item-image-hint">Поточне зображення: samsung-galaxy-s24-800.jpg. Залиште поле порожнім, щоб
+                    не змінювати його. Файл AVIF, WebP або JPEG.</p>
+                <p>
+                    <label for="item-specs">Характеристики</label>
+                    <textarea id="item-specs" name="specs" rows="4" cols="40" maxlength="300"
+                        aria-describedby="item-specs-hint">Екран 6,2" AMOLED 120 Гц
+Процесор Exynos 2400
+Камера 50 Мп
+Пам'ять 8/256 ГБ</textarea>
+                </p>
+                <p id="item-specs-hint">Кожна характеристика з нового рядка, до 300 символів.</p>
+                <p>
+                    <label for="item-description">Опис</label>
+                    <textarea id="item-description" name="description" rows="4" cols="40" maxlength="300"
+                        aria-describedby="item-description-hint">Компактний флагман із яскравим екраном і сімома роками оновлень системи.</textarea>
+                </p>
+                <p id="item-description-hint">До 300 символів.</p>
+                <p>
+                    <input type="checkbox" id="item-in-stock" name="inStock" checked>
+                    <label for="item-in-stock">Є в наявності</label>
+                </p>
+            </fieldset>
+
+            <p>
+                <button type="submit">Зберегти зміни</button>
+                <button type="reset">Скасувати зміни</button>
+                <a href="admin.html">Повернутися до адміністрування</a>
+            </p>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Образцов Дмитро</p>
+        <p><a href="admin.html">Адміністрування</a></p>
+    </footer>
+</body>
+
+</html>
