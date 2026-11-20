@@ -32,6 +32,8 @@
 
 @layer base {
   :root {
+    color-scheme: light dark;
+
     --color-bg: #f4f5f7;
     --color-surface: #ffffff;
     --color-surface-alt: #eceef2;
@@ -71,6 +73,30 @@
     --radius-pill: 999px;
 
     --shadow-card: 0 1px 3px rgb(16 24 40 / 0.08), 0 4px 12px rgb(16 24 40 / 0.06);
+  }
+}
+
+/* ===== Темна тема ===== */
+
+@layer base {
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-bg: #121419;
+      --color-surface: #1b1f26;
+      --color-surface-alt: #262b34;
+      --color-text: #e6e9ee;
+      --color-text-muted: #a2abb8;
+      --color-accent: #7aa7ff;
+      --color-accent-hover: #a3c2ff;
+      --color-on-accent: #0e1116;
+      --color-border: #7f8a99;
+      --color-border-subtle: #323844;
+      --color-focus: #ff8f4d;
+      --color-error: #ff7070;
+      --color-success: #55c784;
+
+      --shadow-card: 0 1px 3px rgb(0 0 0 / 0.5), 0 4px 12px rgb(0 0 0 / 0.3);
+    }
   }
 }
 
