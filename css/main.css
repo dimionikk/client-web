@@ -46,7 +46,6 @@
     --color-success: #23743b;
 
     --font-body: system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    --font-mono: ui-monospace, "Cascadia Mono", Consolas, "Liberation Mono", monospace;
 
     --font-size-s: 0.875rem;
     --font-size-m: 1rem;
@@ -167,6 +166,7 @@
   }
 
   dl {
+    max-inline-size: var(--measure);
     margin-block: 0 var(--space-m);
   }
 
@@ -230,6 +230,283 @@
 
   tbody tr:nth-child(even) {
     background-color: var(--color-bg);
+  }
+}
+
+/* ===== Компоненти ===== */
+
+@layer components {
+  /* --- Каркас сторінки --- */
+
+  .site-header,
+  .site-main,
+  .site-footer {
+    padding-inline: var(--space-l);
+  }
+
+  .site-main {
+    padding-block: var(--space-l) var(--space-xl);
+  }
+
+  /* --- Шапка й навігація --- */
+
+  .site-header {
+    padding-block: var(--space-m);
+    border-block-end: var(--border-width) solid var(--color-border-subtle);
+    background-color: var(--color-surface);
+  }
+
+  .site-header__name {
+    margin-block: 0 var(--space-s);
+    font-size: var(--font-size-l);
+    font-weight: 700;
+    line-height: var(--line-height-tight);
+  }
+
+  .site-nav__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .site-nav__link {
+    display: inline-block;
+    padding-block: var(--space-xs);
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .site-nav__link:hover {
+    color: var(--color-accent);
+    text-decoration: underline;
+  }
+
+  .site-nav__link[aria-current="page"] {
+    color: var(--color-accent);
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+  }
+
+  /* --- Підвал --- */
+
+  .site-footer {
+    padding-block: var(--space-l);
+    border-block-start: var(--border-width) solid var(--color-border-subtle);
+    background-color: var(--color-surface);
+    color: var(--color-text-muted);
+    font-size: var(--font-size-s);
+  }
+
+  .site-footer__text {
+    margin-block: 0 var(--space-xs);
+  }
+
+  .site-footer__link[aria-current="page"] {
+    color: var(--color-text);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  /* --- Хлібні крихти --- */
+
+  .breadcrumbs__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: var(--font-size-s);
+  }
+
+  .breadcrumbs__item {
+    display: inline;
+  }
+
+  .breadcrumbs__item + .breadcrumbs__item::before {
+    content: "/";
+    margin-inline: var(--space-xs) var(--space-s);
+    color: var(--color-text-muted);
+  }
+
+  .breadcrumbs__item[aria-current="page"] {
+    color: var(--color-text-muted);
+  }
+
+  /* --- Бейдж і ціна --- */
+
+  .badge {
+    display: inline-block;
+    padding: 0.125em 0.625em;
+    border: var(--border-width) solid var(--color-border-subtle);
+    border-radius: var(--radius-pill);
+    background-color: var(--color-surface-alt);
+    color: var(--color-text);
+    font-size: var(--font-size-s);
+    font-weight: 600;
+  }
+
+  .badge[data-in-stock="true"] {
+    border-color: currentColor;
+    color: var(--color-success);
+  }
+
+  .badge[data-in-stock="false"] {
+    border-color: currentColor;
+    border-style: dashed;
+    color: var(--color-error);
+  }
+
+  .price {
+    color: var(--color-accent);
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* --- Каталог і картка пристрою --- */
+
+  .device-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .device-list__item + .device-list__item {
+    margin-block-start: var(--space-l);
+  }
+
+  .device-card {
+    max-inline-size: 26rem;
+    padding: var(--space-l);
+    border: var(--border-width) solid var(--color-border-subtle);
+    border-radius: var(--radius-m);
+    background-color: var(--color-surface);
+    box-shadow: var(--shadow-card);
+  }
+
+  .device-card__title {
+    margin-block: 0 var(--space-m);
+    font-size: var(--font-size-l);
+  }
+
+  .device-card__link {
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .device-card__link:hover {
+    color: var(--color-accent);
+    text-decoration: underline;
+  }
+
+  .device-card__image {
+    inline-size: 100%;
+    border-radius: var(--radius-s);
+  }
+
+  .device-card__specs {
+    margin-block: var(--space-m);
+  }
+
+  .device-card__specs > dt {
+    margin-block-start: var(--space-s);
+    padding: 0;
+    border: 0;
+    color: var(--color-text-muted);
+    font-size: var(--font-size-s);
+    font-weight: 400;
+  }
+
+  .device-card__specs > dd {
+    margin-inline-start: 0;
+  }
+
+  .device-card__description {
+    margin: 0;
+    color: var(--color-text-muted);
+  }
+
+  .device-card:has([data-in-stock="false"]) {
+    border-style: dashed;
+    border-color: var(--color-border);
+    background-color: var(--color-surface-alt);
+    box-shadow: none;
+  }
+
+  .device-card:has([data-in-stock="false"]) .device-card__image {
+    opacity: 0.6;
+    filter: grayscale(1);
+  }
+
+  .device-card:has([data-in-stock="false"]) .price {
+    color: var(--color-text-muted);
+  }
+
+  /* --- Сторінка деталей --- */
+
+  .figure {
+    max-inline-size: 40rem;
+  }
+
+  .figure__image {
+    border: var(--border-width) solid var(--color-border-subtle);
+    border-radius: var(--radius-m);
+  }
+
+  .toc {
+    max-inline-size: 24rem;
+    margin-block-end: var(--space-xl);
+    padding: var(--space-m) var(--space-l);
+    border: var(--border-width) solid var(--color-border-subtle);
+    border-radius: var(--radius-m);
+    background-color: var(--color-surface);
+  }
+
+  .toc__title {
+    margin-block: 0 var(--space-s);
+    font-size: var(--font-size-m);
+  }
+
+  .toc__list {
+    margin: 0;
+  }
+
+  /* --- Часті запитання --- */
+
+  .faq__item {
+    max-inline-size: var(--measure);
+    padding: var(--space-s) var(--space-m);
+    border: var(--border-width) solid var(--color-border-subtle);
+    border-radius: var(--radius-m);
+    background-color: var(--color-surface);
+  }
+
+  .faq__item + .faq__item {
+    margin-block-start: var(--space-s);
+  }
+
+  .faq__question {
+    padding-block: var(--space-xs);
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .faq__question::marker {
+    content: "+  ";
+    color: var(--color-accent);
+    font-weight: 700;
+  }
+
+  .faq__item[open] > .faq__question {
+    margin-block-end: var(--space-s);
+  }
+
+  .faq__item[open] > .faq__question::marker {
+    content: "−  ";
+  }
+
+  .faq__answer {
+    margin: 0;
+    padding-block-end: var(--space-xs);
   }
 }
 

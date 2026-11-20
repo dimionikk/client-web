@@ -12,17 +12,17 @@
 </head>
 
 <body>
-    <header id="site-header">
-        <p class="site-name">GadgetHub</p>
-        <nav aria-label="Основна навігація">
-            <ul>
-                <li><a href="index.html">Каталог</a></li>
-                <li><a href="about.html" aria-current="page">Про проєкт</a></li>
+    <header id="site-header" class="site-header">
+        <p class="site-header__name">GadgetHub</p>
+        <nav class="site-nav" aria-label="Основна навігація">
+            <ul class="site-nav__list">
+                <li><a class="site-nav__link" href="index.html">Каталог</a></li>
+                <li><a class="site-nav__link" href="about.html" aria-current="page">Про проєкт</a></li>
             </ul>
         </nav>
     </header>
 
-    <main id="main">
+    <main id="main" class="site-main">
         <h1>Про проєкт</h1>
         <p>GadgetHub – навчальний каталог гаджетів і техніки: телефонів, ноутбуків і навушників. Тут можна
             порівняти пристрої за ціною, роком випуску й характеристиками.</p>
@@ -64,19 +64,19 @@
 
         <section id="faq" aria-labelledby="faq-title">
             <h2 id="faq-title">Часті запитання</h2>
-            <details name="faq">
-                <summary>Звідки беруться ціни?</summary>
-                <p>Ціни орієнтовні й зібрані з відкритих джерел. У магазинах вони можуть відрізнятися залежно від
+            <details class="faq__item" name="faq">
+                <summary class="faq__question">Звідки беруться ціни?</summary>
+                <p class="faq__answer">Ціни орієнтовні й зібрані з відкритих джерел. У магазинах вони можуть відрізнятися залежно від
                     модифікації та акцій.</p>
             </details>
-            <details name="faq">
-                <summary>Що означає «Немає в наявності»?</summary>
-                <p>Пристрій тимчасово відсутній у продажу. У картці залишається остання відома ціна, щоб його
+            <details class="faq__item" name="faq">
+                <summary class="faq__question">Що означає «Немає в наявності»?</summary>
+                <p class="faq__answer">Пристрій тимчасово відсутній у продажу. У картці залишається остання відома ціна, щоб його
                     можна було порівняти з іншими.</p>
             </details>
-            <details name="faq">
-                <summary>Чи можна купити пристрій на сайті?</summary>
-                <p>Ні, GadgetHub – каталог для вибору й порівняння техніки. Купити обраний пристрій можна в
+            <details class="faq__item" name="faq">
+                <summary class="faq__question">Чи можна купити пристрій на сайті?</summary>
+                <p class="faq__answer">Ні, GadgetHub – каталог для вибору й порівняння техніки. Купити обраний пристрій можна в
                     будь-якому магазині електроніки.</p>
             </details>
         </section>
@@ -90,9 +90,9 @@
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 Образцов Дмитро</p>
-        <p><a href="admin.html">Адміністрування</a></p>
+    <footer class="site-footer">
+        <p class="site-footer__text">&copy; 2026 Образцов Дмитро</p>
+        <p class="site-footer__text"><a class="site-footer__link" href="admin.html">Адміністрування</a></p>
     </footer>
 </body>
 
