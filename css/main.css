@@ -38,6 +38,7 @@
     --color-text: #1c2129;
     --color-text-muted: #566070;
     --color-accent: #1f5bd1;
+    --color-accent-hover: #1847a6;
     --color-on-accent: #ffffff;
     --color-border: #7a8391;
     --color-border-subtle: #dde1e6;
@@ -507,6 +508,98 @@
   .faq__answer {
     margin: 0;
     padding-block-end: var(--space-xs);
+  }
+
+  /* --- Форми --- */
+
+  .form {
+    max-inline-size: 32rem;
+    accent-color: var(--color-accent);
+  }
+
+  .form__group {
+    margin: var(--space-l) 0 0;
+    padding: var(--space-s) var(--space-l) var(--space-l);
+    border: var(--border-width) solid var(--color-border-subtle);
+    border-radius: var(--radius-m);
+    background-color: var(--color-surface);
+  }
+
+  .form__legend {
+    padding-inline: var(--space-s);
+    font-size: var(--font-size-l);
+    font-weight: 700;
+  }
+
+  .form__item {
+    margin-block: var(--space-m) 0;
+  }
+
+  .form__label {
+    display: block;
+    margin-block-end: var(--space-xs);
+    font-weight: 600;
+  }
+
+  .form__field {
+    display: block;
+    inline-size: 100%;
+    max-inline-size: 26rem;
+    padding: var(--space-s);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius-s);
+    background-color: var(--color-surface);
+    color: var(--color-text);
+  }
+
+  textarea.form__field {
+    resize: vertical;
+  }
+
+  .form__field:user-invalid {
+    border-width: var(--border-width-strong);
+    border-color: var(--color-error);
+  }
+
+  .form__hint {
+    margin-block: var(--space-xs) 0;
+    color: var(--color-text-muted);
+    font-size: var(--font-size-s);
+  }
+
+  .form__actions {
+    margin-block: var(--space-l) 0;
+  }
+
+  /* --- Кнопки --- */
+
+  .button {
+    padding: var(--space-s) var(--space-l);
+    border: var(--border-width) solid var(--color-accent);
+    border-radius: var(--radius-s);
+    background-color: var(--color-accent);
+    color: var(--color-on-accent);
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .button:hover {
+    border-color: var(--color-accent-hover);
+    background-color: var(--color-accent-hover);
+  }
+
+  .button--secondary {
+    background-color: var(--color-surface);
+    color: var(--color-accent);
+  }
+
+  .button--secondary:hover {
+    background-color: var(--color-surface-alt);
+    color: var(--color-accent-hover);
+  }
+
+  .button + .button {
+    margin-inline-start: var(--space-s);
   }
 }
 

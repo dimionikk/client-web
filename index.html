@@ -27,39 +27,39 @@
 
         <section id="filters" aria-labelledby="filters-title">
             <h2 id="filters-title">Фільтри</h2>
-            <form id="filter-form">
-                <p>
-                    <label for="search">Пошук за назвою</label>
-                    <input type="search" id="search" name="q">
+            <form id="filter-form" class="form">
+                <p class="form__item">
+                    <label class="form__label" for="search">Пошук за назвою</label>
+                    <input class="form__field" type="search" id="search" name="q">
                 </p>
 
-                <fieldset>
-                    <legend>Тип пристрою</legend>
-                    <p>
+                <fieldset class="form__group">
+                    <legend class="form__legend">Тип пристрою</legend>
+                    <p class="form__item">
                         <input type="checkbox" id="category-phone" name="category" value="phone">
                         <label for="category-phone">Телефон</label>
                     </p>
-                    <p>
+                    <p class="form__item">
                         <input type="checkbox" id="category-laptop" name="category" value="laptop">
                         <label for="category-laptop">Ноутбук</label>
                     </p>
-                    <p>
+                    <p class="form__item">
                         <input type="checkbox" id="category-headphones" name="category" value="headphones">
                         <label for="category-headphones">Навушники</label>
                     </p>
                 </fieldset>
 
-                <p>
-                    <label for="sort">Сортувати</label>
-                    <select id="sort" name="sort">
+                <p class="form__item">
+                    <label class="form__label" for="sort">Сортувати</label>
+                    <select class="form__field" id="sort" name="sort">
                         <option value="name">за назвою</option>
                         <option value="price">за ціною</option>
                         <option value="year">за роком випуску</option>
                     </select>
                 </p>
 
-                <p>
-                    <button type="submit">Застосувати</button>
+                <p class="form__actions">
+                    <button class="button" type="submit">Застосувати</button>
                 </p>
             </form>
         </section>

@@ -120,35 +120,35 @@
         <section id="review" aria-labelledby="review-title">
             <h2 id="review-title">Відгук</h2>
             <p>Поділіться враженнями про Samsung Galaxy S24.</p>
-            <form id="review-form" method="get">
-                <p>
-                    <label for="review-name">Ім'я</label>
-                    <input type="text" id="review-name" name="name" autocomplete="name" maxlength="50">
+            <form id="review-form" class="form" method="get">
+                <p class="form__item">
+                    <label class="form__label" for="review-name">Ім'я</label>
+                    <input class="form__field" type="text" id="review-name" name="name" autocomplete="name" maxlength="50">
                 </p>
-                <p>
-                    <label for="review-email">Електронна пошта</label>
-                    <input type="email" id="review-email" name="email" autocomplete="email" required>
+                <p class="form__item">
+                    <label class="form__label" for="review-email">Електронна пошта</label>
+                    <input class="form__field" type="email" id="review-email" name="email" autocomplete="email" required>
                 </p>
 
-                <fieldset>
-                    <legend>Консультація телефоном</legend>
+                <fieldset class="form__group">
+                    <legend class="form__legend">Консультація телефоном</legend>
                     <p>Заповніть, якщо хочете, щоб вам зателефонували.</p>
-                    <p>
-                        <label for="review-phone">Телефон</label>
-                        <input type="tel" id="review-phone" name="phone" autocomplete="tel" pattern="\+380[0-9]{9}"
+                    <p class="form__item">
+                        <label class="form__label" for="review-phone">Телефон</label>
+                        <input class="form__field" type="tel" id="review-phone" name="phone" autocomplete="tel" pattern="\+380[0-9]{9}"
                             aria-describedby="review-phone-hint">
                     </p>
-                    <p id="review-phone-hint">Формат: +380 і 9 цифр, наприклад +380501112233.</p>
-                    <p>
-                        <label for="review-call-time">Зручний час дзвінка</label>
-                        <input type="time" id="review-call-time" name="callTime" min="09:00" max="20:00"
+                    <p id="review-phone-hint" class="form__hint">Формат: +380 і 9 цифр, наприклад +380501112233.</p>
+                    <p class="form__item">
+                        <label class="form__label" for="review-call-time">Зручний час дзвінка</label>
+                        <input class="form__field" type="time" id="review-call-time" name="callTime" min="09:00" max="20:00"
                             aria-describedby="review-call-time-hint">
                     </p>
-                    <p id="review-call-time-hint">З 09:00 до 20:00.</p>
+                    <p id="review-call-time-hint" class="form__hint">З 09:00 до 20:00.</p>
                 </fieldset>
 
-                <fieldset>
-                    <legend>Оцінка</legend>
+                <fieldset class="form__group">
+                    <legend class="form__legend">Оцінка</legend>
                     <label><input type="radio" name="rating" value="1" required> 1</label>
                     <label><input type="radio" name="rating" value="2"> 2</label>
                     <label><input type="radio" name="rating" value="3"> 3</label>
@@ -156,9 +156,9 @@
                     <label><input type="radio" name="rating" value="5"> 5</label>
                 </fieldset>
 
-                <p>
-                    <label for="review-compare">З чим порівнювали</label>
-                    <input type="text" id="review-compare" name="compareWith" list="review-compare-list"
+                <p class="form__item">
+                    <label class="form__label" for="review-compare">З чим порівнювали</label>
+                    <input class="form__field" type="text" id="review-compare" name="compareWith" list="review-compare-list"
                         maxlength="80" aria-describedby="review-compare-hint">
                     <datalist id="review-compare-list">
                         <option value="Samsung Galaxy S24+"></option>
@@ -166,20 +166,20 @@
                         <option value="Google Pixel 8"></option>
                     </datalist>
                 </p>
-                <p id="review-compare-hint">Оберіть зі списку або впишіть свій варіант.</p>
-                <p>
-                    <label for="review-comment">Коментар</label>
-                    <textarea id="review-comment" name="comment" rows="4" cols="40" minlength="10" maxlength="500"
+                <p id="review-compare-hint" class="form__hint">Оберіть зі списку або впишіть свій варіант.</p>
+                <p class="form__item">
+                    <label class="form__label" for="review-comment">Коментар</label>
+                    <textarea class="form__field" id="review-comment" name="comment" rows="4" cols="40" minlength="10" maxlength="500"
                         aria-describedby="review-comment-hint"></textarea>
                 </p>
-                <p id="review-comment-hint">Необов'язково. Якщо пишете коментар, від 10 до 500 символів.</p>
-                <p>
+                <p id="review-comment-hint" class="form__hint">Необов'язково. Якщо пишете коментар, від 10 до 500 символів.</p>
+                <p class="form__item">
                     <input type="checkbox" id="review-consent" name="consent" required>
                     <label for="review-consent">Погоджуюся з правилами публікації відгуку</label>
                 </p>
 
-                <p>
-                    <button type="submit">Надіслати відгук</button>
+                <p class="form__actions">
+                    <button class="button" type="submit">Надіслати відгук</button>
                 </p>
             </form>
         </section>
