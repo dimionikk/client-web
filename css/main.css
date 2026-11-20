@@ -15,6 +15,7 @@
 
   img,
   video {
+    display: block;
     max-inline-size: 100%;
     block-size: auto;
   }
@@ -50,8 +51,10 @@
     --font-size-s: 0.875rem;
     --font-size-m: 1rem;
     --font-size-l: 1.25rem;
-    --font-size-xl: 1.75rem;
+    --font-size-xl: 1.5rem;
+    --font-size-2xl: 2rem;
     --line-height: 1.5;
+    --line-height-tight: 1.2;
     --measure: 65ch;
 
     --space-xs: 0.25rem;
@@ -68,5 +71,173 @@
     --radius-pill: 999px;
 
     --shadow-card: 0 1px 3px rgb(16 24 40 / 0.08), 0 4px 12px rgb(16 24 40 / 0.06);
+  }
+}
+
+/* ===== Базові стилі документа ===== */
+
+@layer base {
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: var(--font-size-m);
+    line-height: var(--line-height);
+  }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-on-accent);
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 2px;
+  }
+
+  /* --- Заголовки й текст --- */
+
+  h1,
+  h2,
+  h3 {
+    margin-block: var(--space-l) var(--space-s);
+    line-height: var(--line-height-tight);
+  }
+
+  h1 {
+    font-size: var(--font-size-2xl);
+  }
+
+  h2 {
+    font-size: var(--font-size-xl);
+  }
+
+  h3 {
+    font-size: var(--font-size-l);
+  }
+
+  p {
+    margin-block: 0 var(--space-m);
+  }
+
+  p,
+  li {
+    max-inline-size: var(--measure);
+  }
+
+  section + section {
+    margin-block-start: var(--space-xl);
+  }
+
+  abbr[title] {
+    text-decoration: underline dotted;
+    cursor: help;
+  }
+
+  address {
+    font-style: normal;
+  }
+
+  /* --- Посилання --- */
+
+  a {
+    color: var(--color-accent);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.15em;
+  }
+
+  a:hover {
+    text-decoration-thickness: 2px;
+  }
+
+  /* --- Списки --- */
+
+  ul,
+  ol {
+    margin-block: 0 var(--space-m);
+    padding-inline-start: var(--space-l);
+  }
+
+  li + li {
+    margin-block-start: var(--space-xs);
+  }
+
+  li::marker {
+    color: var(--color-text-muted);
+  }
+
+  dl {
+    margin-block: 0 var(--space-m);
+  }
+
+  dt {
+    font-weight: 600;
+  }
+
+  dt:not(:first-child) {
+    margin-block-start: var(--space-s);
+    padding-block-start: var(--space-s);
+    border-block-start: var(--border-width) solid var(--color-border-subtle);
+  }
+
+  dd {
+    margin-inline-start: var(--space-m);
+  }
+
+  /* --- Зображення --- */
+
+  figure {
+    margin: 0 0 var(--space-l);
+  }
+
+  figcaption {
+    margin-block-start: var(--space-s);
+    color: var(--color-text-muted);
+    font-size: var(--font-size-s);
+  }
+
+  /* --- Таблиці --- */
+
+  table {
+    margin-block-end: var(--space-m);
+    border: var(--border-width) solid var(--color-border-subtle);
+    border-collapse: collapse;
+    background-color: var(--color-surface);
+  }
+
+  caption {
+    padding-block-end: var(--space-s);
+    font-weight: 600;
+    text-align: start;
+  }
+
+  th,
+  td {
+    padding: var(--space-s) var(--space-m);
+    border-block-end: var(--border-width) solid var(--color-border-subtle);
+    text-align: start;
+    vertical-align: top;
+  }
+
+  thead th {
+    border-block-end: var(--border-width-strong) solid var(--color-border);
+    background-color: var(--color-surface-alt);
+  }
+
+  tbody th {
+    font-weight: 600;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: var(--color-bg);
+  }
+}
+
+/* ===== Утиліти ===== */
+
+@layer utilities {
+  .u-numeric {
+    text-align: end;
+    font-variant-numeric: tabular-nums;
   }
 }
